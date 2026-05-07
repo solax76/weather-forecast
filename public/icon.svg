@@ -1,0 +1,49 @@
+<svg xmlns="http://www.w3.org/2000/svg" viewBox="0 0 512 512" width="512" height="512">
+  <defs>
+    <linearGradient id="skyGrad" x1="0%" y1="0%" x2="0%" y2="100%">
+      <stop offset="0%" style="stop-color:#1a73e8;stop-opacity:1" />
+      <stop offset="100%" style="stop-color:#4fc3f7;stop-opacity:1" />
+    </linearGradient>
+    <linearGradient id="sunGrad" x1="0%" y1="0%" x2="100%" y2="100%">
+      <stop offset="0%" style="stop-color:#ffe066;stop-opacity:1" />
+      <stop offset="100%" style="stop-color:#ffb300;stop-opacity:1" />
+    </linearGradient>
+    <linearGradient id="cloudGrad" x1="0%" y1="0%" x2="0%" y2="100%">
+      <stop offset="0%" style="stop-color:#ffffff;stop-opacity:1" />
+      <stop offset="100%" style="stop-color:#dde8f0;stop-opacity:1" />
+    </linearGradient>
+    <clipPath id="circle">
+      <circle cx="256" cy="256" r="256"/>
+    </clipPath>
+  </defs>
+
+  <!-- Background circle -->
+  <circle cx="256" cy="256" r="256" fill="url(#skyGrad)"/>
+
+  <!-- Sun rays -->
+  <g clip-path="url(#circle)" opacity="0.9">
+    <line x1="256" y1="60" x2="256" y2="110" stroke="#ffe066" stroke-width="18" stroke-linecap="round"/>
+    <line x1="370" y1="94" x2="338" y2="130" stroke="#ffe066" stroke-width="18" stroke-linecap="round"/>
+    <line x1="415" y1="200" x2="368" y2="215" stroke="#ffe066" stroke-width="18" stroke-linecap="round"/>
+    <line x1="142" y1="94" x2="174" y2="130" stroke="#ffe066" stroke-width="18" stroke-linecap="round"/>
+    <line x1="97" y1="200" x2="144" y2="215" stroke="#ffe066" stroke-width="18" stroke-linecap="round"/>
+  </g>
+
+  <!-- Sun body -->
+  <circle cx="256" cy="210" r="85" fill="url(#sunGrad)" clip-path="url(#circle)"/>
+
+  <!-- Cloud shadow (subtle) -->
+  <ellipse cx="264" cy="346" rx="148" ry="28" fill="#1565c0" opacity="0.15" clip-path="url(#circle)"/>
+
+  <!-- Cloud main body -->
+  <g clip-path="url(#circle)">
+    <!-- Cloud bumps -->
+    <circle cx="185" cy="335" r="55" fill="url(#cloudGrad)"/>
+    <circle cx="245" cy="308" r="72" fill="url(#cloudGrad)"/>
+    <circle cx="320" cy="325" r="58" fill="url(#cloudGrad)"/>
+    <circle cx="370" cy="348" r="42" fill="url(#cloudGrad)"/>
+    <circle cx="140" cy="355" r="38" fill="url(#cloudGrad)"/>
+    <!-- Cloud base flat -->
+    <rect x="120" y="350" width="295" height="60" rx="20" fill="url(#cloudGrad)"/>
+  </g>
+</svg>
