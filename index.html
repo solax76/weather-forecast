@@ -4,6 +4,22 @@
     <meta charset="UTF-8" />
     <meta name="viewport" content="width=device-width, initial-scale=1.0" />
     <title>Previsioni Meteo</title>
+
+    <!-- PWA manifest -->
+    <link rel="manifest" href="/weather/manifest.webmanifest" />
+    <meta name="theme-color" content="#1a73e8" />
+
+    <!-- iOS PWA -->
+    <meta name="apple-mobile-web-app-capable" content="yes" />
+    <meta name="apple-mobile-web-app-status-bar-style" content="default" />
+    <meta name="apple-mobile-web-app-title" content="Meteo" />
+    <link rel="apple-touch-icon" href="/weather/icon-180x180.png" />
+
+    <!-- General -->
+    <meta name="description" content="Previsioni meteo a 7 giorni con modelli ECMWF, NOAA e DWD" />
+    <link rel="icon" type="image/png" sizes="192x192" href="/weather/icon-192x192.png" />
+    <link rel="icon" type="image/svg+xml" href="/weather/icon.svg" />
+
     <!-- Anti-FOUC: imposta il tema prima che React carichi -->
     <script>
       ;(function () {
@@ -19,5 +35,12 @@
   <body>
     <div id="root"></div>
     <script type="module" src="/src/main.jsx"></script>
+    <script>
+      if ('serviceWorker' in navigator) {
+        window.addEventListener('load', function () {
+          navigator.serviceWorker.register('/weather/sw.js', { scope: '/weather/' })
+        })
+      }
+    </script>
   </body>
 </html>
