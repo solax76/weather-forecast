@@ -85,6 +85,7 @@ export default function WeatherForecast({ data, location, model }) {
           Open-Meteo
         </a>
         {' '}· CC BY 4.0
+        {' '}· v{__APP_VERSION__}
       </p>
     </div>
   )
