@@ -1,0 +1,23 @@
+<!DOCTYPE html>
+<html lang="it">
+  <head>
+    <meta charset="UTF-8" />
+    <meta name="viewport" content="width=device-width, initial-scale=1.0" />
+    <title>Previsioni Meteo</title>
+    <!-- Anti-FOUC: imposta il tema prima che React carichi -->
+    <script>
+      ;(function () {
+        var pref = ''
+        try { pref = localStorage.getItem('theme_preference') || 'auto' } catch (e) {}
+        var theme = pref === 'light' ? 'light'
+                  : pref === 'dark'  ? 'dark'
+                  : window.matchMedia('(prefers-color-scheme: dark)').matches ? 'dark' : 'light'
+        document.documentElement.setAttribute('data-theme', theme)
+      })()
+    </script>
+  </head>
+  <body>
+    <div id="root"></div>
+    <script type="module" src="/src/main.jsx"></script>
+  </body>
+</html>
