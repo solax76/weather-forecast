@@ -1,5 +1,6 @@
 const GEOCODING_URL = 'https://geocoding-api.open-meteo.com/v1/search'
 const WEATHER_URL = 'https://api.open-meteo.com/v1/forecast'
+const AIR_QUALITY_URL = 'https://air-quality-api.open-meteo.com/v1/air-quality'
 
 export async function searchLocation(query) {
   const params = new URLSearchParams({
@@ -47,5 +48,46 @@ export async function fetchWeather(lat, lon, model) {
 
   const res = await fetch(`${WEATHER_URL}?${params}`)
   if (!res.ok) throw new Error('Errore API meteo')
+  return res.json()
+}
+
+export async function fetchAirQuality(lat, lon) {
+  const params = new URLSearchParams({
+    latitude: lat,
+    longitude: lon,
+    current: [
+      'european_aqi',
+      'pm10',
+      'pm2_5',
+      'carbon_monoxide',
+      'nitrogen_dioxide',
+      'sulphur_dioxide',
+      'ozone',
+    ].join(','),
+    timezone: 'auto',
+  })
+
+  const res = await fetch(`${AIR_QUALITY_URL}?${params}`)
+  if (!res.ok) throw new Error('Errore API qualità aria')
+  return res.json()
+}
+
+export async function fetchPollen(lat, lon) {
+  const params = new URLSearchParams({
+    latitude: lat,
+    longitude: lon,
+    current: [
+      'alder_pollen',
+      'birch_pollen',
+      'grass_pollen',
+      'mugwort_pollen',
+      'olive_pollen',
+      'ragweed_pollen',
+    ].join(','),
+    timezone: 'auto',
+  })
+
+  const res = await fetch(`${AIR_QUALITY_URL}?${params}`)
+  if (!res.ok) throw new Error('Errore API pollini')
   return res.json()
 }

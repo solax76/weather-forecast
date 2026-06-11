@@ -211,6 +211,163 @@ body {
   opacity: 0.65;
 }
 
+/* ─── Menu di navigazione ────────────────────────────────────── */
+.nav-pill {
+  display: inline-flex;
+  align-items: center;
+  gap: 6px;
+  padding: 0.35rem 0.85rem;
+  border-radius: 999px;
+  border: 1px solid var(--toggle-border);
+  background: var(--toggle-bg);
+  color: var(--text-secondary);
+  font-size: 0.85rem;
+  cursor: pointer;
+  white-space: nowrap;
+  transition: background 0.18s, color 0.18s, border-color 0.18s;
+}
+
+.nav-pill:hover {
+  background: var(--toggle-hover-bg);
+  color: var(--text-primary);
+}
+
+.nav-pill.active {
+  background: var(--toggle-active-bg);
+  border-color: var(--toggle-active-border);
+  color: var(--toggle-active-color);
+  font-weight: 600;
+}
+
+/* ─── Pagina Qualità dell'aria ───────────────────────────────── */
+.aqi-hero {
+  max-width: 320px;
+  margin: 0 auto 2rem;
+  padding: 1.5rem;
+  text-align: center;
+  border-radius: 20px;
+  border: 2px solid var(--card-border);
+  background: var(--card-bg);
+  backdrop-filter: blur(10px);
+  -webkit-backdrop-filter: blur(10px);
+}
+
+.aqi-value {
+  font-size: 3.5rem;
+  font-weight: 800;
+  line-height: 1;
+}
+
+.aqi-label {
+  font-size: 0.85rem;
+  color: var(--text-secondary);
+  margin: 0.5rem 0 0.85rem;
+}
+
+.aqi-cat {
+  display: inline-block;
+  padding: 0.25rem 1rem;
+  border-radius: 999px;
+  color: #fff;
+  font-weight: 600;
+  font-size: 0.9rem;
+}
+
+/* ─── Griglia metriche (inquinanti) ──────────────────────────── */
+.metric-grid {
+  display: grid;
+  grid-template-columns: repeat(auto-fill, minmax(150px, 1fr));
+  gap: 0.75rem;
+}
+
+.metric-card {
+  background: var(--card-bg);
+  border: 1px solid var(--card-border);
+  border-radius: 14px;
+  padding: 1rem;
+  text-align: center;
+  color: var(--text-primary);
+  backdrop-filter: blur(10px);
+  -webkit-backdrop-filter: blur(10px);
+}
+
+.metric-icon { font-size: 1.8rem; line-height: 1; }
+
+.metric-label {
+  font-size: 0.8rem;
+  color: var(--text-secondary);
+  margin: 0.4rem 0;
+  min-height: 2.4em;
+  display: flex;
+  align-items: center;
+  justify-content: center;
+}
+
+.metric-value { font-size: 1.25rem; font-weight: 700; }
+
+.metric-unit { font-size: 0.7rem; color: var(--text-muted); font-weight: 400; }
+
+/* ─── Pagina Pollini ─────────────────────────────────────────── */
+.pollen-grid {
+  display: grid;
+  grid-template-columns: repeat(auto-fill, minmax(240px, 1fr));
+  gap: 0.75rem;
+}
+
+.pollen-card {
+  background: var(--card-bg);
+  border: 1px solid var(--card-border);
+  border-radius: 14px;
+  padding: 1rem 1.1rem;
+  color: var(--text-primary);
+  backdrop-filter: blur(10px);
+  -webkit-backdrop-filter: blur(10px);
+}
+
+.pollen-head {
+  display: flex;
+  align-items: center;
+  justify-content: space-between;
+  gap: 0.5rem;
+  margin-bottom: 0.6rem;
+}
+
+.pollen-name {
+  display: flex;
+  align-items: center;
+  gap: 8px;
+  font-weight: 600;
+}
+
+.pollen-level { font-size: 0.8rem; font-weight: 600; }
+
+.pollen-bar-track {
+  height: 8px;
+  border-radius: 999px;
+  background: var(--toggle-bg);
+  overflow: hidden;
+}
+
+.pollen-bar-fill {
+  height: 100%;
+  border-radius: 999px;
+  transition: width 0.4s ease;
+}
+
+.pollen-value {
+  font-size: 0.75rem;
+  color: var(--text-muted);
+  margin-top: 0.4rem;
+}
+
+/* ─── Footer sorgente dati ───────────────────────────────────── */
+.page-footer {
+  text-align: center;
+  margin-top: 2rem;
+  font-size: 0.75rem;
+  color: var(--text-muted);
+}
+
 /* ─── Day Cards ──────────────────────────────────────────────── */
 .day-card {
   background: var(--card-bg) !important;

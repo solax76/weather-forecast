@@ -2,6 +2,7 @@ import { useState, useEffect, useRef } from 'react'
 import { Badge } from 'react-bootstrap'
 import DayCard from './DayCard'
 import HourlyForecast from './HourlyForecast'
+import { DataFooter } from './PageStatus'
 
 const MODEL_LABELS = {
   ecmwf_ifs025: 'ECMWF IFS',
@@ -79,14 +80,7 @@ export default function WeatherForecast({ data, location, model }) {
         </div>
       )}
 
-      <p className="text-center mt-4" style={{ fontSize: '0.75rem', color: 'var(--text-muted)' }}>
-        Dati forniti da{' '}
-        <a href="https://open-meteo.com" target="_blank" rel="noreferrer" style={{ color: 'var(--text-muted)' }}>
-          Open-Meteo
-        </a>
-        {' '}· CC BY 4.0
-        {' '}· v{__APP_VERSION__}
-      </p>
+      <DataFooter />
     </div>
   )
 }
