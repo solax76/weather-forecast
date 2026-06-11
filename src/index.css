@@ -261,6 +261,26 @@ body {
   color: var(--text-secondary);
 }
 
+/* ─── Weekly scroll ─────────────────────────────────────────── */
+.weekly-scroll {
+  display: flex;
+  gap: 0.75rem;
+  overflow-x: auto;
+  scrollbar-color: var(--scrollbar-thumb) transparent;
+}
+
+.weekly-scroll::-webkit-scrollbar { height: 5px; }
+.weekly-scroll::-webkit-scrollbar-track { background: transparent; }
+.weekly-scroll::-webkit-scrollbar-thumb {
+  background: var(--scrollbar-thumb);
+  border-radius: 4px;
+}
+
+.weekly-scroll-item {
+  margin-top: 1rem;
+  flex: 0 0 155px;
+}
+
 /* ─── Location search ────────────────────────────────────────── */
 .location-search-wrapper {
   position: relative;

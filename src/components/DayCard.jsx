@@ -24,7 +24,7 @@ export default function DayCard({
 
   return (
     <Card
-      className={`day-card h-100 ${isToday ? 'today-card' : ''} ${isSelected ? 'selected-card' : ''}`}
+      className={`day-card ${isToday ? 'today-card' : ''} ${isSelected ? 'selected-card' : ''}`}
       onClick={onClick}
       style={{ cursor: 'pointer' }}
     >

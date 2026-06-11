@@ -1,5 +1,5 @@
 import { useState, useEffect, useRef } from 'react'
-import { Row, Col, Badge } from 'react-bootstrap'
+import { Badge } from 'react-bootstrap'
 import DayCard from './DayCard'
 import HourlyForecast from './HourlyForecast'
 
@@ -47,9 +47,9 @@ export default function WeatherForecast({ data, location, model }) {
         </div>
       </div>
 
-      <Row xs={2} sm={3} md={4} lg={7} className="g-3">
+      <div className="weekly-scroll">
         {daily.time.map((date, idx) => (
-          <Col key={date}>
+          <div key={date} className="weekly-scroll-item">
             <DayCard
               date={date}
               weatherCode={daily.weather_code[idx]}
@@ -64,9 +64,9 @@ export default function WeatherForecast({ data, location, model }) {
               isSelected={selectedDay === idx}
               onClick={() => handleDayClick(idx)}
             />
-          </Col>
+          </div>
         ))}
-      </Row>
+      </div>
 
       {selectedDay !== null && hourly && (
         <div ref={hourlyRef}>
