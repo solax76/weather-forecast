@@ -10,6 +10,15 @@ export function getAqiCategory(aqi) {
   return { label: 'Estremamente scarsa', color: '#7c3aed' }
 }
 
+export function getUvCategory(uv) {
+  if (uv == null) return { label: 'N/D', color: '#9ca3af' }
+  if (uv < 3)  return { label: 'Basso',      color: '#10b981' }
+  if (uv < 6)  return { label: 'Moderato',   color: '#f59e0b' }
+  if (uv < 8)  return { label: 'Alto',       color: '#f97316' }
+  if (uv < 11) return { label: 'Molto alto', color: '#ef4444' }
+  return { label: 'Estremo', color: '#7c3aed' }
+}
+
 export const POLLUTANTS = [
   { key: 'pm2_5',            label: 'PM2.5',  unit: 'µg/m³', icon: '🌫️' },
   { key: 'pm10',             label: 'PM10',   unit: 'µg/m³', icon: '🌁' },

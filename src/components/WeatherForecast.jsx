@@ -8,6 +8,8 @@ const MODEL_LABELS = {
   ecmwf_ifs025: 'ECMWF IFS',
   gfs_seamless:  'NOAA GFS',
   icon_seamless: 'DWD ICON',
+  italia_meteo_arpae_icon_2i: 'ARPAE ICON-2I',
+  merged: 'Merged (media modelli)',
 }
 
 export default function WeatherForecast({ data, location, model }) {

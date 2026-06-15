@@ -1,7 +1,7 @@
 import { Alert } from 'react-bootstrap'
 import { useGeoData } from '../hooks/useGeoData'
 import { fetchAirQuality } from '../utils/api'
-import { getAqiCategory, POLLUTANTS } from '../utils/airQualityInfo'
+import { getAqiCategory, getUvCategory, POLLUTANTS } from '../utils/airQualityInfo'
 import { LoadingScreen, Welcome, LocationHeader, DataFooter } from './PageStatus'
 
 export default function AirQuality({ location }) {
@@ -32,6 +32,8 @@ export default function AirQuality({ location }) {
   const current = data.current ?? {}
   const aqi = current.european_aqi
   const cat = getAqiCategory(aqi)
+  const uv = current.uv_index
+  const uvCat = getUvCategory(uv)
 
   return (
     <div className="mt-3">
@@ -41,6 +43,14 @@ export default function AirQuality({ location }) {
         <div className="aqi-value" style={{ color: cat.color }}>{aqi ?? '—'}</div>
         <div className="aqi-label">Indice europeo di qualità dell'aria</div>
         <div className="aqi-cat" style={{ background: cat.color }}>{cat.label}</div>
+      </div>
+
+      <div className="aqi-hero" style={{ borderColor: uvCat.color }}>
+        <div className="aqi-value" style={{ color: uvCat.color }}>
+          {uv != null ? Math.round(uv * 10) / 10 : '—'}
+        </div>
+        <div className="aqi-label">Indice UV</div>
+        <div className="aqi-cat" style={{ background: uvCat.color }}>{uvCat.label}</div>
       </div>
 
       <div className="metric-grid">
