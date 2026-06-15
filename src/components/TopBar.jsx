@@ -6,7 +6,7 @@ const MODELS = [
   { value: 'gfs_seamless',                  label: 'NOAA'          },
   { value: 'icon_seamless',                 label: 'DWD ICON'      },
   { value: 'italia_meteo_arpae_icon_2i',    label: 'ARPAE ICON-2I' },
-  { value: 'merged',                        label: 'Merged'        },
+  { value: 'merged',                        label: 'MEDIA MODELLI' },
 ]
 
 const PAGES = [
